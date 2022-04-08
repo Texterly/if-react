@@ -2,25 +2,18 @@
 import {useState} from 'react';
 import {hotels} from '../../../data/data';
 
-function Form ({searchValue, setSearchValue}) {
+function Form ({onChange}) {
 
-    const [value, setValue] = useState('0')
+    const [search, setSearch] = useState('0')
 
     const handlerChange = (event) => {
         let inputValue = event.target.value.toLowerCase()
-        setValue(inputValue)
+        setSearch(inputValue)
     }
-
-    let searchValueArray = searchValue
 
     const handlerClick = () => {
 
-        searchValueArray = hotels.filter(hotel=> {
-            return hotel.name.toLowerCase().includes(value) ||
-                hotel.city.toLowerCase().includes(value) ||
-                hotel.country.toLowerCase().includes(value)
-        })
-        setSearchValue(searchValueArray)
+        onChange(search)
     }
 
     return (
