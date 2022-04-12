@@ -27,7 +27,7 @@ function TopSection ({onChange}) {
                         <div>
                             <img src={AppStore} alt='App store'/>
                         </div>
-                        <Filter />
+                        {/*<Filter />*/}
                     </div>
                 </div>
                 </div>
