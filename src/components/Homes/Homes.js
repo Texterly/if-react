@@ -1,24 +1,22 @@
 /* eslint-disable */
-import React from 'react';
 
 import Blocks from './Blocks/Blocks';
 import './Homes.css';
+import Title from "../Title/Title";
 
-class Homes extends React.Component {
-  render() {
+function Homes ({title}) {
     return (
         <div className='container-back'>
             <div className='section'>
                 <div className='container'>
                     <div className='header-text'>
-                        <p className='text-primary'>Homes guests loves</p>
+                        <Title text={title}/>
                     </div>
                     <Blocks/>
                 </div>
             </div>
         </div>
     );
-  }
 }
 
 export default Homes;
