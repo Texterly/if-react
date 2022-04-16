@@ -13,23 +13,23 @@ function TopSection ({onChange}) {
             <div className='header-background'>
                 <div className='section-header'>
                     <Nav/>
-                <div className='header-page'>
-                    <div>
-                        <h1>Discover stays <br/>
-                            to live, work or just relax
-                        </h1>
-                    </div>
-                    <Form onChange={onChange}/>
-                    <div className='header-apps'>
+                    <div className='header-page'>
                         <div>
-                            <img src={Google} alt='google'/>
+                            <h1>Discover stays <br/>
+                                to live, work or just relax
+                            </h1>
                         </div>
-                        <div>
-                            <img src={AppStore} alt='App store'/>
+                        <Form onChange={onChange}/>
+                        <div className='header-apps'>
+                            <div>
+                                <img src={Google} alt='google'/>
+                            </div>
+                            <div>
+                                <img src={AppStore} alt='App store'/>
+                            </div>
+                            {/*<Filter />*/}
                         </div>
-                        {/*<Filter />*/}
                     </div>
-                </div>
                 </div>
             </div>
 

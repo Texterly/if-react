@@ -1,10 +1,10 @@
 /* eslint-disable */
-
-import Homes from '../Homes/Homes';
-import {useEffect, useState} from "react";
-import {hotels} from '../../data/data';
 import './App.css';
 import TopSection from "../Top-section/Top-section";
+import Homes from '../Homes/Homes';
+import {useEffect, useState} from "react";
+import Footer from "../Footer/Footer";
+
 
 function App() {
     const [searchValue, setSearchValue] = useState([])
@@ -27,13 +27,16 @@ function App() {
             })
             .then(setSearchValue)
     },[value])
-  return (
-    <div className="App">
+  return <>
+    <main>
       <TopSection onChange={setValue}/>
+
       {searchValue.length > 0 && <Homes data={searchValue} title={'Available hotels'}/>}
+
       {serverData.length > 0 && <Homes data={serverData} title={'Homes guests loves'} />}
-    </div>
-  );
+    </main>
+    <Footer  wrapper={{padding: '120px 0 104px 120px'}}/>
+    </>
 }
 
 export default App;
