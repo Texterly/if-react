@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React from 'react';
-
 import './Blocks.css';
 import Item from "./Item/Item";
 
