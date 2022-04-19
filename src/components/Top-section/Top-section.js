@@ -4,7 +4,6 @@ import Form from './Form/Form'
 import './Top-section.css'
 import AppStore from './images/App_Store_Badge_US-UK_RGB_blk_092917 1.png'
 import Google from './images/google-play-badge.png'
-import Filter from "./Filter/Filter";
 
 function TopSection ({onChange}) {
 
@@ -27,7 +26,6 @@ function TopSection ({onChange}) {
                             <div>
                                 <img src={AppStore} alt='App store'/>
                             </div>
-                            {/*<Filter />*/}
                         </div>
                     </div>
                 </div>

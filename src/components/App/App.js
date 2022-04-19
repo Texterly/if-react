@@ -31,7 +31,7 @@ function App() {
     <main>
       <TopSection onChange={setValue}/>
 
-      {searchValue.length > 0 && <Homes data={searchValue} title={'Available hotels'}/>}
+      {(value && searchValue.length) > 0 && <Homes data={searchValue} title={'Available hotels'}/>}
 
       {serverData.length > 0 && <Homes data={serverData} title={'Homes guests loves'} />}
     </main>
