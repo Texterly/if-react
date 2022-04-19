@@ -5,6 +5,7 @@ import './Homes.css';
 import Title from "../Title/Title";
 
 function Homes ({title, data}) {
+
     return (
         <div className='container-back'>
             <div className='section'>
