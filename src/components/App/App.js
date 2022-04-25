@@ -1,23 +1,37 @@
-
 /* eslint-disable */
 
-import React from 'react';
 import Homes from '../Homes/Homes';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {hotels} from '../../data/data';
-import AvailableHotels from "../Available Hotels/Available Hotels";
 import './App.css';
 import TopSection from "../Top-section/Top-section";
 
 function App() {
     const [searchValue, setSearchValue] = useState([])
+    const [serverData, setServerData] = useState([])
+    const [value, setValue] = useState('0')
 
+    useEffect(() => {
+
+        fetch('https://fe-student-api.herokuapp.com/api/hotels/popular')
+            .then((resonse) => {
+                return resonse.json()
+            })
+            .then(setServerData)
+    },[])
+
+    useEffect(()=> {
+        fetch(`https://fe-student-api.herokuapp.com/api/hotels?search=${value}`)
+            .then((response)=>{
+                return response.json()
+            })
+            .then(setSearchValue)
+    },[value])
   return (
     <div className="App">
-      <TopSection searchValue={searchValue} setSearchValue={setSearchValue}/>
-      {/*<AvailableHotels/>*/}
+      <TopSection onChange={setValue}/>
       {searchValue.length > 0 && <Homes data={searchValue} title={'Available hotels'}/>}
-      <Homes data={hotels} title={'Homes guests loves'} />
+      {serverData.length > 0 && <Homes data={serverData} title={'Homes guests loves'} />}
     </div>
   );
 }

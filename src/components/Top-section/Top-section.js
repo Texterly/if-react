@@ -6,7 +6,8 @@ import AppStore from './images/App_Store_Badge_US-UK_RGB_blk_092917 1.png'
 import Google from './images/google-play-badge.png'
 import Filter from "./Filter/Filter";
 
-function TopSection ({searchValue, setSearchValue}) {
+function TopSection ({onChange}) {
+
 
     return (
         <div className='header'>
@@ -19,7 +20,8 @@ function TopSection ({searchValue, setSearchValue}) {
                             to live, work or just relax
                         </h1>
                     </div>
-                    <Form searchValue={searchValue} setSearchValue={setSearchValue}/>
+                    <Form onChange={onChange}/>
+
                     <div className='header-apps'>
                         <div>
                             <img src={Google} alt='google'/>
