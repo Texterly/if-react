@@ -14,8 +14,10 @@ function App() {
     useEffect(() => {
 
         fetch('https://fe-student-api.herokuapp.com/api/hotels/popular')
+
             .then((response) => {
                 return response.json()
+
             })
             .then(setServerData)
     },[])
