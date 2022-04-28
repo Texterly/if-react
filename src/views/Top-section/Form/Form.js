@@ -1,7 +1,7 @@
 /* eslint-disable */
 import {useState} from 'react';
-import DatePicker from "../DatePicker/DatePicker";
-import Filter from "../Filter/Filter";
+import DatePicker from "./DatePicker/DatePicker";
+import Filter from "./Filter/Filter";
 
 function Form ({onChange}) {
 

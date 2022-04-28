@@ -4,7 +4,8 @@ import Select from "./Select/Select";
 import './Filter.css'
 import {useState} from "react";
 
-function Filter ({adultsCount, setAdultsCount, setChildrenCount, childrenCount, roomsCount,setRoomsCount}) {
+function Filter ({adultsCount, setAdultsCount, setChildrenCount,
+                     childrenCount, roomsCount,setRoomsCount}) {
 
     const counters = [
         {
@@ -36,7 +37,7 @@ function Filter ({adultsCount, setAdultsCount, setChildrenCount, childrenCount, 
     const [addRemoveSelect, setAddRemoveSelect] = useState([])
 
     return (
-        <div className='filter' id='filter'>
+        <div className='filter'>
             {
                 counters.map(i => <Counter addRemoveSelect={addRemoveSelect}
                                             setAddRemoveSelect={setAddRemoveSelect}
@@ -49,7 +50,7 @@ function Filter ({adultsCount, setAdultsCount, setChildrenCount, childrenCount, 
                         <p>What is the age of the child you’re <br/> travelling with?</p>
                         <div className="selectsContainer">
                             {
-                                addRemoveSelect.map((select, index) => <Select key={index}/>)
+                                addRemoveSelect.map(index => <Select key={index}/>)
                             }
                         </div>
                     </div>

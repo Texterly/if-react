@@ -21,7 +21,7 @@ function HotelPage() {
         <div className='hotelBody'>
             <div>
                 <h1 className='hotelInfoTittle'>{hotelData.name}</h1>
-                <img src={hotelData.imageUrl} alt="hotelImage"/>
+                <img className='hotelInfoImg' src={hotelData.imageUrl} alt="hotelImage"/>
             </div>
             <p className='hotelInfoText'>
                 {`Hello dear user of our site! We are pleased to present you this hotel, which is located in

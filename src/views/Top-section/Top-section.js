@@ -24,7 +24,7 @@ function TopSection ({onChange}) {
                                 <img src={Google} alt='google'/>
                             </div>
                             <div>
-                                <img src={AppStore} alt='App store'/>
+                                <img src={AppStore} alt='MainPage store'/>
                             </div>
                         </div>
                     </div>

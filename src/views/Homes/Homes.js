@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import Blocks from './Blocks/Blocks';
+import Blocks from '../../components/Blocks/Blocks';
 import './Homes.css';
 import Title from "../Title/Title";
 

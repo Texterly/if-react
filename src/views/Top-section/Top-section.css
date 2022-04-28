@@ -71,6 +71,7 @@
 .nav-picture {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .nav-picture div {
@@ -83,6 +84,13 @@
 
 .nav-picture-menu {
     display: none;
+}
+
+.-orangeFill {
+    fill:rgba(245, 189, 65, 1);
+}
+.-whiteFill {
+    fill:#FFFFFF;
 }
 
 .header-page {
@@ -224,7 +232,7 @@
 .header-apps {
     display: flex;
     justify-content: center;
-    position: relative;
+    /*position: relative;*/
 }
 
 .header-apps div {
