@@ -1,8 +1,28 @@
 /* eslint-disable */
 import {useState} from 'react';
-import {hotels} from '../../../data/data';
+import DatePicker from "../DatePicker/DatePicker";
+import Filter from "../Filter/Filter";
 
 function Form ({onChange}) {
+
+    const [adultsCount, setAdultsCount] = useState(2)
+    const [childrenCount, setChildrenCount] = useState(0)
+    const [roomsCount, setRoomsCount] = useState(1)
+
+    const [stateFilter, setStateFiler] = useState({
+        state: 'off'
+    })
+
+    const clickFilter = (e) => {
+        e.stopPropagation()
+
+        if (stateFilter.state === 'off') {
+            setStateFiler({state: 'on'})
+        }
+        if (stateFilter.state === 'on') {
+            setStateFiler({state: 'off'})
+        }
+    }
 
     const [search, setSearch] = useState('0')
 
@@ -12,7 +32,6 @@ function Form ({onChange}) {
     }
 
     const handlerClick = () => {
-
         onChange(search)
     }
 
@@ -29,30 +48,18 @@ function Form ({onChange}) {
                     </svg>
                 </div>
                 <div className='button-container'>
-                    <div className='calendar'>
-                        <div className='calendar-before-date'>
-                            <input name='calendar-b' id='calendar-before' className='calendar-before-input' type="text"/>
-                            <label className='calendar-label-before' htmlFor="calendar-before">Check in</label>
-                        </div>
-                        <div className='calendar-after-date'>
-                            <input name='calendar-a' id='calendar-after' className='calendar-after-input' type="text"/>
-                            <label className='calendar-label-after' htmlFor="calendar-after">Check out</label>
-                        </div>
+                    <DatePicker/>
+                    <div className='properties properties-border-color' id='properties' tabIndex='0' onClick={clickFilter}>
+                        {adultsCount} Adults — {childrenCount} Children — {roomsCount} Room
                     </div>
-                    <div className='properties properties-border-color' id='properties'>
-                        <div className='adults properties-border'>
-                            <input name='adults' id='adults' className='adults-input' type='text' required/>
-                            <label className='adults-label' htmlFor='adults'>Adults</label>
-                        </div>
-                        <div className='children properties-border'>
-                            <input name='children' id='children' className='children-input' type='text' required/>
-                            <label htmlFor='children' className='children-label'>Children</label>
-                        </div>
-                        <div className='rooms properties-border'>
-                            <input type='text' name='rooms' id='rooms' className='rooms-input' required/>
-                            <label htmlFor='rooms' className='rooms-label'>Rooms</label>
-                        </div>
-                    </div>
+                    {
+                        stateFilter.state === 'on' && <Filter adultsCount={adultsCount}
+                                                              childrenCount={childrenCount}
+                                                              roomsCount={roomsCount}
+                                                              setAdultsCount={setAdultsCount}
+                                                              setChildrenCount={setChildrenCount}
+                                                              setRoomsCount={setRoomsCount}/>
+                    }
                     <button type='button' className='search-button' id='search-button' onClick={handlerClick}>Search</button>
                 </div>
             </div>

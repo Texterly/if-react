@@ -8,7 +8,6 @@ import Filter from "./Filter/Filter";
 
 function TopSection ({onChange}) {
 
-
     return (
         <div className='header'>
             <div className='header-background'>
@@ -21,7 +20,6 @@ function TopSection ({onChange}) {
                         </h1>
                     </div>
                     <Form onChange={onChange}/>
-
                     <div className='header-apps'>
                         <div>
                             <img src={Google} alt='google'/>
@@ -29,7 +27,6 @@ function TopSection ({onChange}) {
                         <div>
                             <img src={AppStore} alt='App store'/>
                         </div>
-                        <Filter />
                     </div>
                 </div>
                 </div>
