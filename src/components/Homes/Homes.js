@@ -4,7 +4,8 @@ import Blocks from './Blocks/Blocks';
 import './Homes.css';
 import Title from "../Title/Title";
 
-function Homes ({title}) {
+function Homes ({title, data}) {
+
     return (
         <div className='container-back'>
             <div className='section'>
@@ -12,7 +13,7 @@ function Homes ({title}) {
                     <div className='header-text'>
                         <Title text={title}/>
                     </div>
-                    <Blocks/>
+                    <Blocks data={data}/>
                 </div>
             </div>
         </div>

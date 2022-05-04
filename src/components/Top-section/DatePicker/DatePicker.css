@@ -73,8 +73,8 @@
     transition: 2s ease all;
 }
 
-.calendar:focus+.calendarLabel,
-.calendar:not(:focus):valid+ .calendarLabel {
+#calendarInput:focus+.calendarLabel,
+#calendarInput:not(:focus):valid+ .calendarLabel {
     color: #FFFFFF;
     top: -48px;
 }

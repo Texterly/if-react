@@ -1,10 +1,11 @@
 .filter {
     position: absolute;
-    top: 73px;
+    top: 76px;
     right: 192px;
     background-color: #FFFFFF;
     border-radius: 8px;
     padding: 22px;
+    color: #000000;
 }
 .childBlock {
     font-size: 12px;

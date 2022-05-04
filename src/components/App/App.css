@@ -1,6 +1,16 @@
+@import "../../assets/fonts/fonts.css";
+
 
 *{
   box-sizing: border-box;
   margin: 0;
+
+  padding: 0;
+  border:none;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
 }
 
