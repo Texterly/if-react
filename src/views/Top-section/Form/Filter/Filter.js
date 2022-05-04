@@ -4,8 +4,14 @@ import Select from "./Select/Select";
 import './Filter.css'
 import {useState} from "react";
 
-function Filter ({adultsCount, setAdultsCount, setChildrenCount,
-                     childrenCount, roomsCount,setRoomsCount}) {
+function Filter ({
+                     adultsCount,
+                     setAdultsCount,
+                     setChildrenCount,
+                     childrenCount,
+                     roomsCount,
+                     setRoomsCount
+                }) {
 
     const counters = [
         {

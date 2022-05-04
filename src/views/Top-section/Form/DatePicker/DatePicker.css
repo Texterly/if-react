@@ -1,16 +1,4 @@
-/*.calendar {*/
-/*    padding: 20px 24px;*/
-/*    border: 3px solid rgba(245, 189, 65, 0);*/
-/*    border-radius: 8px;*/
-/*    cursor: pointer;*/
-/*    transition: .2s ease;*/
-/*}*/
-/*.calendar:hover {*/
-/*    border: 3px solid #dedee1;*/
-/*}*/
-/*.calendar:focus {*/
-/*    border: 3px solid rgba(245, 189, 65, 100);*/
-/*}*/
+
 .react-datepicker {
     margin-top: 14px;
 }
@@ -19,15 +7,6 @@
     line-height: 21px;
 
 }
-/*.calendarLabel {*/
-/*    position: absolute;*/
-/*    top: 2%;*/
-/*    left: 4%;*/
-/*    transform: translate(0, 100%);*/
-/*    transition: .5s ease;*/
-/*    font-size: 18px;*/
-/*    line-height: 21px;*/
-/*}*/
 
 .calendar {
     color: #000000;
@@ -40,7 +19,7 @@
     justify-content: center;
     /*min-width: 259px;*/
     width: 34%;
-    position: relative;
+    /*position: relative;*/
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -49,6 +28,7 @@
 .calendar:hover {
     border-color: #F5BD41;
 }
+
 
 /*.calendar-before-date {*/
 /*    position: relative;*/
@@ -67,10 +47,17 @@
 }
 
 .calendarLabel {
+    /*position: absolute;*/
+    /*top: 20px;*/
+    /*left: 20px;*/
+    /*transition: 2s ease all;*/
     position: absolute;
-    top: 20px;
-    left: 20px;
-    transition: 2s ease all;
+    top: 2%;
+    left: 4%;
+    transform: translate(0, 100%);
+    transition: .5s ease;
+    font-size: 18px;
+    line-height: 21px;
 }
 
 #calendarInput:focus+.calendarLabel,
