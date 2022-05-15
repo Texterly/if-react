@@ -1,0 +1,12 @@
+.nav-picture-night {
+    fill: #FFFFFF;
+    width: 30px;
+    height: 30px;
+    margin-right: 24px;
+    cursor: pointer;
+}
+.nav-picture-account {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
