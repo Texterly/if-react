@@ -1,0 +1,80 @@
+/*.calendar {*/
+/*    padding: 20px 24px;*/
+/*    border: 3px solid rgba(245, 189, 65, 0);*/
+/*    border-radius: 8px;*/
+/*    cursor: pointer;*/
+/*    transition: .2s ease;*/
+/*}*/
+/*.calendar:hover {*/
+/*    border: 3px solid #dedee1;*/
+/*}*/
+/*.calendar:focus {*/
+/*    border: 3px solid rgba(245, 189, 65, 100);*/
+/*}*/
+.react-datepicker {
+    margin-top: 14px;
+}
+.form__item {
+    font-size: 18px;
+    line-height: 21px;
+
+}
+/*.calendarLabel {*/
+/*    position: absolute;*/
+/*    top: 2%;*/
+/*    left: 4%;*/
+/*    transform: translate(0, 100%);*/
+/*    transition: .5s ease;*/
+/*    font-size: 18px;*/
+/*    line-height: 21px;*/
+/*}*/
+
+.calendar {
+    color: #000000;
+    border: 4px solid #F3F3F4;
+    height: 100%;
+    /*margin: 0 auto;*/
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*min-width: 259px;*/
+    width: 34%;
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.calendar:hover {
+    border-color: #F5BD41;
+}
+
+/*.calendar-before-date {*/
+/*    position: relative;*/
+/*    height: 100%;*/
+/*}*/
+
+/*.calendar-before-date:hover {*/
+/*    border-color: #3077C6;*/
+/*}*/
+
+.form__item {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+}
+
+.calendarLabel {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: 2s ease all;
+}
+
+#calendarInput:focus+.calendarLabel,
+#calendarInput:not(:focus):valid+ .calendarLabel {
+    color: #FFFFFF;
+    top: -48px;
+}
