@@ -56,7 +56,11 @@ function Filter ({
                         <p>What is the age of the child you’re <br/> travelling with?</p>
                         <div className="selectsContainer">
                             {
-                                addRemoveSelect.map(index => <Select key={index}/>)
+                                addRemoveSelect.map((item, index) => {
+                                    return (<Select key={`${item}-${index}`}
+                                    index={index}
+                                    />)
+                                })
                             }
                         </div>
                     </div>

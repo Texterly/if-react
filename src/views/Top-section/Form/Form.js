@@ -2,24 +2,34 @@
 import {useState} from 'react';
 import DatePicker from "./DatePicker/DatePicker";
 import Filter from "./Filter/Filter";
+import {useDispatch} from "react-redux";
 
-function Form ({onChange}) {
+function Form ({onChange,
+                   adultsCount,
+                   setAdultsCount,
+                   childrenCount,
+                   setChildrenCount,
+                   roomsCount,
+                   setRoomsCount
+}) {
 
-    const [adultsCount, setAdultsCount] = useState(2)
-    const [childrenCount, setChildrenCount] = useState(0)
-    const [roomsCount, setRoomsCount] = useState(1)
-    const [search, setSearch] = useState(1)
-
-    const [stateFilter, setStateFiler] = useState(false)
+    const [search, setSearch] = useState('')
+    const [openFilter, setOpenFiler] = useState(false)
 
     const clickFilter = (e) => {
         e.stopPropagation()
-        setStateFiler(!stateFilter)
+        setOpenFiler(!openFilter)
     }
 
     const handlerChange = (event) => {
         let inputValue = event.target.value.toLowerCase()
         setSearch(inputValue)
+    }
+
+    const dispatch = useDispatch()
+    const handlerClick = () => {
+        onChange(search)
+        dispatch({type: "SEARCH"})
     }
 
     return (
@@ -40,7 +50,7 @@ function Form ({onChange}) {
                         {adultsCount} Adults — {childrenCount} Children — {roomsCount} Room
                     </div>
                     {
-                        stateFilter && <Filter adultsCount={adultsCount}
+                        openFilter && <Filter adultsCount={adultsCount}
                                                               childrenCount={childrenCount}
                                                               roomsCount={roomsCount}
                                                               setAdultsCount={setAdultsCount}
@@ -48,7 +58,7 @@ function Form ({onChange}) {
                                                               setRoomsCount={setRoomsCount}/>
                     }
                     <button type='button' className='search-button' id='search-button'
-                            onClick={()=>onChange(search)}>Search
+                            onClick={handlerClick}>Search
                     </button>
                 </div>
             </div>

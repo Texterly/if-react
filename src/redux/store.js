@@ -19,7 +19,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 export const store = createStore(
     persistedReducer,
-    initialState,
+
     devtoolsExtension)
 
 export const persistor = persistStore(store)
