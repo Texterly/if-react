@@ -4,6 +4,8 @@ import Form from './Form/Form'
 import './Top-section.css'
 import AppStore from './images/App_Store_Badge_US-UK_RGB_blk_092917 1.png'
 import Google from './images/google-play-badge.png'
+import {HeaderBackground, HeaderPage, SectionHeader, StyledHeader} from "./style";
+import topBackgroundImg from '../../assets/img/topBackground.png'
 
 function TopSection ({
                          onChange,
@@ -16,11 +18,11 @@ function TopSection ({
 }) {
 
     return (
-        <div className='header'>
-            <div className='header-background'>
-                <div className='section-header'>
+        <StyledHeader background={topBackgroundImg}>
+            <HeaderBackground>
+                <SectionHeader>
                     <Nav/>
-                    <div className='header-page'>
+                    <HeaderPage>
                         <div>
                             <h1>Discover stays <br/>
                                 to live, work or just relax
@@ -42,11 +44,10 @@ function TopSection ({
                                 <img src={AppStore} alt='MainPage store'/>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+                    </HeaderPage>
+                </SectionHeader>
+            </HeaderBackground>
+        </StyledHeader>
     );
 }
 
