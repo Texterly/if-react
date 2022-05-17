@@ -3,19 +3,20 @@
 import Blocks from '../../components/Blocks/Blocks';
 import './Homes.css';
 import Title from "../Title/Title";
+import {Container, ContainerBack, HeaderText, Section} from "./style";
 
 function Homes ({title, data}) {
     return (
-        <div className='container-back'>
-            <div className='section'>
-                <div className='container'>
-                    <div className='header-text'>
+        <ContainerBack>
+            <Section>
+                <Container>
+                    <HeaderText>
                         <Title text={title}/>
-                    </div>
+                    </HeaderText>
                     <Blocks data={data}/>
-                </div>
-            </div>
-        </div>
+                </Container>
+            </Section>
+        </ContainerBack>
     );
 }
 

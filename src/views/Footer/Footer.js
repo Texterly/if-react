@@ -1,16 +1,39 @@
 /* eslint-disable */
-import './Footer.css'
 import LinkColumn from "./FooterColumn/FooterColumn";
+import styled from 'styled-components';
+
+const StyleFooter = styled.footer`
+  background-color: ${props => props.theme.footer.bg};
+  transition: .5s ease;
+`;
+
+const FooterLogoSvg = styled.div`
+  display: none;
+  fill: #FFFFFF;
+  width: 98px;
+  height: 19px;
+  margin: 0 auto;
+`;
+
+const FooterBody = styled.div`
+  display: flex;
+  margin-bottom: 64px;
+`;
+
+const Copyright = styled.p`
+  color: #FFFFFF;
+  font-size: 14px;
+`;
 
 function Footer({wrapper}) {
     const leftLinks = ['About', 'How Triphouse works', 'Careers', 'Privacy', 'Terms']
     const middleLinks = ['Property types', 'Guest houses', 'Hotels', 'Apartments', 'Villas', 'Holiday homes', 'Hostels']
     const rightLinks = ['Support', 'Contact Customer Service', 'FAQ']
 
-    return <footer className='footer'>
+    return <StyleFooter>
         <div style={wrapper} className={wrapper}>
             <a href="#">
-                <svg className="footer-logo-svg" width="122" height="24" viewBox="0 0 122 24"
+                <FooterLogoSvg width="122" height="24" viewBox="0 0 122 24"
                      xmlns="http://www.w3.org/2000/svg">
                     <g>
                         <path
@@ -32,16 +55,16 @@ function Footer({wrapper}) {
                         <path
                             d="M116.392 19.6265C115.357 19.6265 114.392 19.4826 113.497 19.1946C112.62 18.8886 111.847 18.4387 111.181 17.8448C110.531 17.2508 110.014 16.5039 109.628 15.604C109.259 14.7042 109.075 13.6513 109.075 12.4454C109.075 11.2576 109.259 10.2407 109.628 9.39483C110.014 8.53093 110.514 7.82902 111.128 7.28909C111.742 6.73116 112.444 6.32621 113.234 6.07424C114.023 5.80427 114.831 5.66929 115.655 5.66929C116.585 5.66929 117.428 5.81327 118.182 6.10124C118.954 6.3892 119.612 6.78515 120.156 7.28909C120.718 7.79303 121.148 8.39595 121.446 9.09786C121.762 9.79978 121.92 10.5647 121.92 11.3926C121.92 12.0045 121.753 12.4724 121.42 12.7964C121.086 13.1204 120.621 13.3273 120.025 13.4173L113.523 14.4162C113.716 15.0101 114.111 15.4601 114.708 15.766C115.304 16.054 115.989 16.198 116.761 16.198C117.48 16.198 118.156 16.108 118.788 15.928C119.437 15.73 119.963 15.5051 120.367 15.2531C120.648 15.4331 120.885 15.685 121.078 16.009C121.271 16.333 121.367 16.6749 121.367 17.0349C121.367 17.8448 120.999 18.4477 120.262 18.8436C119.7 19.1496 119.068 19.3566 118.367 19.4646C117.665 19.5726 117.007 19.6265 116.392 19.6265ZM115.655 9.01687C115.234 9.01687 114.866 9.08886 114.55 9.23285C114.252 9.37683 114.006 9.5658 113.813 9.79978C113.62 10.0157 113.471 10.2677 113.365 10.5557C113.278 10.8256 113.225 11.1046 113.207 11.3926L117.708 10.6367C117.656 10.2767 117.463 9.91676 117.129 9.5568C116.796 9.19685 116.305 9.01687 115.655 9.01687Z"/>
                     </g>
-                </svg>
+                </FooterLogoSvg>
             </a>
-            <div className='footerBody'>
+            <FooterBody>
                 <LinkColumn arrLinks={leftLinks} />
                 <LinkColumn arrLinks={middleLinks} />
                 <LinkColumn arrLinks={rightLinks} />
-            </div>
-            <p className='copyright'>&copy; 2020 Triphouse, Inc. All rights reserved</p>
+            </FooterBody>
+            <Copyright>&copy; 2020 Triphouse, Inc. All rights reserved</Copyright>
         </div>
-    </footer>
+    </StyleFooter>
 }
 
 export default Footer
